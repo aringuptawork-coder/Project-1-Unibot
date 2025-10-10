@@ -1,2 +1,2 @@
-ipykernel
-python-dotenv
+gradio
+pandas
