@@ -28,7 +28,13 @@ def classify_free(text: str) -> Optional[str]:
         w in t
         for w in [
             "study",
+            "studies",
+            "studying",
+            "library",
+            "exams",
+            "course",
             "exam",
+            "assignment",
             "advisor",
             "deadline",
             "timetable",
@@ -41,6 +47,10 @@ def classify_free(text: str) -> Optional[str]:
         w in t
         for w in [
             "sport",
+            "sports",
+            "Sports",
+            "Sporting",
+            "training",
             "gym",
             "basketball",
             "football",
