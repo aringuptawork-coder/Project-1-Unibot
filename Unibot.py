@@ -86,11 +86,17 @@ def classify_free(text: str) -> Optional[str]:
             "club",
             "society",
             "friends",
-            "social",
+            "friend",
+            "friendshipsocial",
             "festival",
+            "activity",
+            "fun",
             "concert",
+            "show",
             "meetup",
+            "meet-up",
             "karaoke",
+            "sing",
             "dinner",
             "picnic",
             "valentine",
@@ -451,7 +457,7 @@ def run_once(df: pd.DataFrame, seed_text: str | None = None):
     if seed_text:
         user_text = seed_text
     else:
-        print("What can I help you with today? (free text, no options)")
+        print("Hello student,What can I help you with today? (free text, no options)")
         user_text = ask("> ")
     topic = classify_free(user_text)
     if topic is None:
