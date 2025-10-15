@@ -217,15 +217,15 @@ def studying_flow():
             k in q2.lower() for k in ["share", "students", "group", "public", "others"]
         ):
             print(
-                "➡️ Suggestion: join a study group. (brief: struggling + willing to share → study group)"
+                " Suggestion: join a study group. (brief: struggling + willing to share → study group)"
             )
         else:
             print(
-                "➡️ Suggestion: contact the student advisor. (brief: struggling + not sharing → advisor)"
+                " Suggestion: contact the student advisor. (brief: struggling + not sharing → advisor)"
             )
     else:
         print(
-            "➡️ Suggestion: use the Student Desk contact form for practical info. (brief: practical → Student Desk)"
+            " Suggestion: use the Student Desk contact form for practical info. (brief: practical → Student Desk)"
         )
 
 
@@ -242,7 +242,7 @@ def sports_flow(df: pd.DataFrame):
     for s in sports:
         if s in t1:
             print(
-                "✅ That sport is available. → Check the University Sports Centre website. (brief: specific + available)"
+                " That sport is available. → Check the University Sports Centre website. (brief: specific + available)"
             )
             return
 
@@ -252,11 +252,11 @@ def sports_flow(df: pd.DataFrame):
         name = ask("Which sport do you have in mind? ").strip().lower()
         if any(s in name for s in sports):
             print(
-                "✅ That sport is available. → Check the University Sports Centre website. (brief: specific + available)"
+                " That sport is available. → Check the University Sports Centre website. (brief: specific + available)"
             )
             return
         else:
-            print("❌ I couldn’t find that exact sport on the campus list.")
+            print(" I couldn’t find that exact sport on the campus list.")
             # fall through to preference-based recommendation
 
     # 3) Exploring (or unknown sport) → follow-up then recommend.
@@ -265,7 +265,7 @@ def sports_flow(df: pd.DataFrame):
     )
     suggestion = rec_sport(sports, q2)
     print(
-        f"➡️ Recommendation: {suggestion} (brief: exploring → follow-up → recommend from available list)"
+        f"Recommendation: {suggestion} (brief: exploring → follow-up → recommend from available list)"
     )
 
     sports = set(df["sports"].str.lower())
@@ -276,7 +276,7 @@ def sports_flow(df: pd.DataFrame):
     for s in sports:
         if s in q1.lower():
             print(
-                "✅ That sport is available. → Check the University Sports Centre website. (brief: specific + available)"
+                "That sport is available. → Check the University Sports Centre website. (brief: specific + available)"
             )
             return
     # otherwise follow-up → recommend
@@ -284,7 +284,7 @@ def sports_flow(df: pd.DataFrame):
         "Describe what you want from a sport (e.g., team vibes, ball games, cardio, strength): "
     )
     print(
-        f"➡️ Recommendation: {rec_sport(sports, q2)} (brief: exploring → follow-up → recommend from available list)"
+        f" Recommendation: {rec_sport(sports, q2)} (brief: exploring → follow-up → recommend from available list)"
     )
 
 
@@ -491,7 +491,7 @@ def main():
                 run_once(df)
             continue
         if more is False:
-            print("Got you. Closing the chat — have a solid day! 👋")
+            print("Got you. Closing the chat — have a solid day! ")
             break
         ans2 = ask("Got it — do you want to continue or end it here? ")
         more2, rem2 = wants_more_and_remainder(ans2)
@@ -502,7 +502,7 @@ def main():
             else:
                 run_once(df)
             continue
-        print("All good. Ending here — take care! 👋")
+        print("All good. Ending here — take care! ")
         break
 
 
